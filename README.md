@@ -1,16 +1,22 @@
-# number to french converter
+# Number to French converter
 
 This is a simple number to french converter taking integer values from 0 to 999999.
 
-## data
+## Data
 
 The values from 0 to 99 being 'mostly' unique values I asked ChatGPT to list them for me, and saved them as a data file.
 Prompt to list and format the values:
 "Liste moi les chiffres en français de zéro à quatre vingt dix neuf avec un seul chiffre par ligne avec les chiffres écrits en toutes lettres. Ecris moi le résultat avec chaque chiffre entouré de guillemets et chaque ligne se finissant par une virgule."
 
-## algorithm
+## Algorithm
 
 - Split the number into two sections: thousands and the rest.
 - Check for French rules concerning the thousands.
 - Created a function to convert a number of 3 digits, checking the French rules applying to the hundreds.
 - Applied the function to the 3 digits corresponding to the thousands, then to the 3 digits corresponding to the rest.
+
+## How to run
+
+- Clone the repository.
+- From the root of the package run `python parser.py [-h] N [N ...]` N being a number (or multiple numbers).
+- The output will be displayed inside the terminal.
