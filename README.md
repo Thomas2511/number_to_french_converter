@@ -1,4 +1,4 @@
-# K**[ata: number to french converter](https://github.com/GaspardPO/kata-number-to-french-converter)**
+# **Kata: number to french converter**
 
 Number can be hard to write in French.
 
