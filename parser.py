@@ -52,10 +52,18 @@ def display(converts: str):
         print(converted)
 
 
+def check_bounded_positive(num: str):
+    """Check input values."""
+    inum = int(num)
+    if inum < 0 or inum > 999999:
+        raise argparse.ArgumentTypeError("Number should be a positive integer smaller than a million which %s is not." % inum)
+    return inum
+
+
 def main():
     """Parse args, convert values, and display them."""
-    parser = argparse.ArgumentParser("number to french converter")
-    parser.add_argument("numbers", help="The numbers which will be converted to french.", metavar='N', type=int, nargs='+')
+    parser = argparse.ArgumentParser("Number to French converter")
+    parser.add_argument("numbers", help="The numbers which will be converted to french.", metavar='N', type=check_bounded_positive, nargs='+')
     args = parser.parse_args()
     converts = [convert(nb) for nb in args.numbers]
     display(converts)
